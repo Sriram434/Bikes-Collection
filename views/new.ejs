@@ -1,0 +1,23 @@
+<%-include("partials/header.ejs") %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"> New Collection </div>
+
+	<form class="ui form" action="/bikes" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="bike[title]" placeholder="title">	
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type="text" name="bike[image]" placeholder="image">	
+		</div>
+		<div class="field">
+			<label>Bike Content</label>
+			<textarea name="bike[body]" required></textarea>	
+		</div>
+		<input class="ui inverted big purple button" type="submit">
+	</form>
+</div>
+
+<%- include("partials/footer.ejs") %>

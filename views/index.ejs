@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+<div class="ui main text container">
+	<div class="ui main header"> Bikes Collections </div>
+	<div class="ui top attached segment">
+		<div class= "ui divided items">
+			<% bikes.forEach(function(bike){ %>
+				<div class="item">
+					<div class="image">
+						<img src="<%= bike.image%>">	
+					</div>
+					<div class="content">
+						<a class="header" href="/bikes/<%= bike._id %>"><%= bike.title %> </a>
+					
+						<div class="meta">
+							<span> <%=bike.created.toDateString()%></span>
+						</div>
+						<div class="description">
+							<p> <%= bike.body.substring(0,100)%>....</p>
+						</div>
+						<div class="extra">
+							<a class="ui inverse purple button" href="/bikes/<%= bike._id %>">Read more..!</a>
+						</div>
+					</div>
+				</div>
+			<% }) %>
+		</div>
+		
+	</div>
+		
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>

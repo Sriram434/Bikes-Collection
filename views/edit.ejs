@@ -1,0 +1,23 @@
+<%-include("partials/header.ejs") %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"> Edit Collection </div>
+
+	<form class="ui form" action="/bikes/<%=bike._id %>?_method=PUT" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="bike[title]" value="<%=bike.title %>">	
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type="text" name="bike[image]" value="<%=bike.image %>">	
+		</div>
+		<div class="field">
+			<label>Bike Content</label>
+			<textarea name="bike[body]" required> <%=bike.body %> </textarea>	
+		</div>
+		<input class="ui inverted big purple button" type="submit">
+	</form>
+</div>
+
+<%- include("partials/footer.ejs") %>
